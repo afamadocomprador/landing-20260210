@@ -7,8 +7,21 @@ import { formatPhoneNumber } from "@/lib/text-formatter"; // Importamos tu utili
 
 // Extendemos el tipo Clinic para incluir los campos que inyectamos en el servidor
 interface ExtendedClinic extends Clinic {
+ /*
   staff_names?: string[];
-  //zip_code?: string;
+  zip_code?: string;
+ */
+  // Aquí puedes poner propiedades que calcules TÚ en el código React/Node
+  // y que NO vengan de la base de datos.
+  
+  distance_km?: number;         // Ejemplo: Distancia calculada al usuario
+  formatted_phone?: string;     // Ejemplo: Teléfono formateado bonito
+  
+  // NOTA: Como 'staff_names' y 'zip_code' ya vienen de la BBDD, 
+  // ya no hace falta definirlos aquí obligatoriamente, 
+  // pero si quieres redefinir su tipo para asegurarte de que no sean nulos:
+  staff_names?: string[];
+
 }
 
 interface ClinicCardProps {
@@ -127,5 +140,4 @@ export default function ClinicCard({ clinic, onSelectClinic }: ClinicCardProps) 
       </div>
     </div>
   );
-
 }
