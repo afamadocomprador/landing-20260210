@@ -28,7 +28,7 @@ export default function DentalMap({ clinics }: { clinics: Clinic[] }) {
     lat: c.latitude,
     lng: c.longitude,
     count: c.staff_count, // El número que sale en el icono
-    slug: c.slug     // El ID para la URL al hacer clic
+    slug: c.clinic_id     // El ID para la URL al hacer clic
   }));
 
 
