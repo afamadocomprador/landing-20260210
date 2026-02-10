@@ -29,7 +29,7 @@ export interface DashboardDataCentro {
 export const getDatosCentros = async (
   supabase: SupabaseClient, 
   codigo_ine_municipio: string 
-): Promise<DashboardDataMunicipio> => {
+): Promise<DashboardDataCentro> => {
 
 
   
