@@ -212,7 +212,7 @@ export const getRelatedLinks = async (
 
     if (activeCities && activeCities.length > 0) {
         //asteriscado pq typescript viejo no permite ... array sobre un set
-        const cityCodes = [...new Set(activeCities.map(c => c.ine_city_code))];
+        //const cityCodes = [...new Set(activeCities.map(c => c.ine_city_code))];
         const cityCodes = Array.from(new Set(activeCities.map(c => c.ine_city_code)));
         const { data: munisComarcas } = await supabase
             .from('ine_municipios')
