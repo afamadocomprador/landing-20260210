@@ -15,8 +15,10 @@ export interface CentroConDatos {
 
 export interface DashboardDataCentro {
   stats: {
-    total_centro_centros: number;
-    total_centro_dentistas: number;
+    //total_centro_centros: number;
+    //total_centro_dentistas: number;
+    total_municipio_centros: number;
+    total_municipio_dentistas: number;
   };
   listado: CentroConDatos[];
 }
@@ -42,7 +44,8 @@ export const getDatosCentros = async (
   if (error) {
     console.error("Error fetching centros:", error);
     return { 
-      stats: { total_centro_centros: 0, total_centro_dentistas: 0 }, 
+      //stats: { total_centro_centros: 0, total_centro_dentistas: 0 }, 
+      stats: { total_municipio_centros: 0, total_municipio_dentistas: 0 }, 
       listado: [] 
     };
   }
@@ -55,8 +58,8 @@ export const getDatosCentros = async (
   const totalCentros = centros.reduce((acc, curr) => acc + curr.num_centros_centro, 0);
   const totalDentistas = centros.reduce((acc, curr) => acc + curr.num_dentistas_centro, 0);
 
-  console.log('totalCentros:',totalCentros);
-  console.log('totalDentistas:',totalDentistas);
+  //console.log('totalCentros:',totalCentros);
+  //console.log('totalDentistas:',totalDentistas);
 
 
   // 3. RETORNO DE DATOS
