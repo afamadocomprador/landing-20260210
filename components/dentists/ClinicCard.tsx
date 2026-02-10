@@ -8,7 +8,7 @@ import { formatPhoneNumber } from "@/lib/text-formatter"; // Importamos tu utili
 // Extendemos el tipo Clinic para incluir los campos que inyectamos en el servidor
 interface ExtendedClinic extends Clinic {
   staff_names?: string[];
-  zip_code?: string;
+  //zip_code?: string;
 }
 
 interface ClinicCardProps {
@@ -127,4 +127,5 @@ export default function ClinicCard({ clinic, onSelectClinic }: ClinicCardProps) 
       </div>
     </div>
   );
+
 }
