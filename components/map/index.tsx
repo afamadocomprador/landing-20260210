@@ -14,7 +14,11 @@ const DentalMapClient = dynamic(() => import("./DentalMapClient"), {
   ),
 });
 
-export default function DentalMap(props: { clinics: Clinic[] }) {
+//export default function DentalMap(props: { clinics: Clinic[] }) {
+export default function DentalMap({ clinics }: { clinics: Clinic[] }) {
+
+  // Verificación de seguridad por si clinics llega undefined
+  if (!clinics) return null;
 
 
   // 1. TRANSFORMACIÓN:
