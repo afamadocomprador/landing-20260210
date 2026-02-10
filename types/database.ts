@@ -1,5 +1,6 @@
 // Ya tenías esta:
 export interface Clinic {
+/*
   clinic_id: string;
   name: string;
   latitude: number;
@@ -10,6 +11,38 @@ export interface Clinic {
   phone: string | null;
   staff_count: number;
   specialties: string[];
+*/
+
+// Identificadores
+  clinic_id: string;
+  
+  // Datos Principales
+  name: string;
+  latitude: number;
+  longitude: number;
+  
+  // Dirección y Ubicación
+  address: string | null;
+  city: string | null;
+  province: string | null;
+  zip_code: string | null;
+  
+  // Códigos INE (Importantes para el filtrado)
+  ine_city_code: string | null;
+  ine_province_code: string | null;
+  ine_comarca_code: string | null; // <--- NUEVO (Vital para nivel 06)
+  
+  // Datos de Contacto y Estado
+  phone: string | null;
+  is_propio: boolean; // <--- NUEVO
+  
+  // Datos de Negocio
+  staff_count: number;
+  specialties: string[] | null;
+  
+  // Ahora la vista "view_clinics_con_dentistas" devuelve esto directamente
+  staff_names?: string[] | null;
+
 }
 
 // AÑADE ESTA NUEVA:
