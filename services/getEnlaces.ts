@@ -220,7 +220,8 @@ export const getRelatedLinks = async (
             .in('codigo', cityCodes);
         
         if (munisComarcas && munisComarcas.length > 0) {
-            const activeComarcaCodes = [...new Set(munisComarcas.map(m => m.comarca_codigo))];
+            //const activeComarcaCodes = [...new Set(munisComarcas.map(m => m.comarca_codigo))];
+            const activeComarcaCodes = Array.from(new Set(munisComarcas.map(m => m.comarca_codigo)));
             const { data: comarcasLanding } = await supabase
                 .from('landings_search_dentistry')
                 .select('breadcrumb, slug')
@@ -361,7 +362,8 @@ export const getRelatedLinks = async (
           let activeComarcaCodes = new Set<string>();
 
           if (activeCities && activeCities.length > 0) {
-              const cityCodes = [...new Set(activeCities.map(c => c.ine_city_code))];
+              //const cityCodes = [...new Set(activeCities.map(c => c.ine_city_code))];
+              const cityCodes = Array.from(new Set(activeCities.map(c => c.ine_city_code)));
               const { data: munisComarcas } = await supabase
                   .from('ine_municipios')
                   .select('comarca_codigo')
