@@ -48,7 +48,8 @@ export async function getLevelData(
   console.log(`\n[DEBUG ENGINE] Landing: ${landing.nombre_ine} | Nivel: ${landing.nivel} | Subnivel: ${landing.subnivel}`);
 
   // 2. ESTADÍSTICAS Y LISTADO
-  let stats = { a:0, b:0 };
+  //asteriscado por typescript .... let stats = { a:0, b:0 };
+  let stats: any = {};
   let listado: any[] = [];
   let totalHeroDentistas = 0;
   let totalHeroCentros = 0;
