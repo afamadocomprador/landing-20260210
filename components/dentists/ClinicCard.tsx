@@ -20,7 +20,7 @@ interface ExtendedClinic extends Clinic {
   // NOTA: Como 'staff_names' y 'zip_code' ya vienen de la BBDD, 
   // ya no hace falta definirlos aquí obligatoriamente, 
   // pero si quieres redefinir su tipo para asegurarte de que no sean nulos:
-  staff_names?: string[];
+  //staff_names?: string[];
 
 }
 
@@ -140,4 +140,5 @@ export default function ClinicCard({ clinic, onSelectClinic }: ClinicCardProps) 
       </div>
     </div>
   );
+
 }
