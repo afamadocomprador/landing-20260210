@@ -15,5 +15,27 @@ const DentalMapClient = dynamic(() => import("./DentalMapClient"), {
 });
 
 export default function DentalMap(props: { clinics: Clinic[] }) {
-  return <DentalMapClient {...props} />;
+
+
+  // 1. TRANSFORMACIÓN:
+  // Convertimos el array de 'Clinic' (BBDD) al formato 'MapMarkerData' (Mapa)
+  const mapMarks = clinics.map((c) => ({
+    name: c.name,
+    lat: c.latitude,
+    lng: c.longitude,
+    count: c.staff_count, // El número que sale en el icono
+    slug: c.slug     // El ID para la URL al hacer clic
+  }));
+
+
+
+  //return <DentalMapClient {...props} />;
+  // 2. RENDERIZADO:
+  // Pasamos 'marks' explícitamente y configuramos el modo de zoom
+  return (
+    <DentalMapClient 
+      marks={mapMarks} 
+      modo={mapMarks.length > 0 ? "FIT_BOUNDS" : "CENTER_ZOOM"} 
+    />
+  );
 }
